@@ -1,5 +1,6 @@
 name: weights_widget
 account: beckmw
-bundleId: 188859
-url: https://beckmw.shinyapps.io/weights_widget
 server: shinyapps.io
+bundleId: 302675
+url: https://beckmw.shinyapps.io/weights_widget
+when: 1446476886.42271
