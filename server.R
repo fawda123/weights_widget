@@ -109,11 +109,11 @@ shinyServer(function(input, output) {
       scale_size(range = c(1, 7)) +
       theme(legend.position = 'none', axis.text = element_text(size = 14), 
             text = element_text(size = 16))
-   
+
     grid.arrange(
       p5,
-      arrangeGrob(p1,p2,p3,p4,nrow=2,left=textGrob('Weights',rot=90)),
-      sub='Date', heights = c(5, 10)
+      arrangeGrob(p1,p2,p3,p4,nrow=2,left=grid::textGrob('Weights',rot=90)),
+      heights = c(5, 10)
     )
     
     },height = 600, width = 750)
