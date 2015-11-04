@@ -14,16 +14,16 @@ require(RColorBrewer)
 
 reftime <- 12
 
-pdf('C:/Users/mbeck/Desktop/wts_ex.pdf', height = 5, width = 9, family = 'serif')
+pdf('C:/Users/Marcus/Desktop/wts_ex.pdf', height = 3.5, width = 7, family = 'serif')
 for(i in 1:15){
-  
+  i <- 1
   reftime <- reftime + 0.5
   
   input <- list(
     daterange = c("2012-06-29", "2012-07-04"), 
     refdate = "2012-07-01",
     reftime = reftime, 
-    win_1 = 3,
+    win_1 = 2,
     win_2 = 12,
     win_3 = 1
   )
@@ -61,7 +61,7 @@ for(i in 1:15){
       paste('Hour window', win_2),
       paste('Tidal height window', win_3), 
       'Combined weights',
-      paste('All weights and tidal series', DateTimeStamp)
+      paste(DateTimeStamp)
       )
   )
   
@@ -71,13 +71,13 @@ for(i in 1:15){
     geom_line(alpha = 0.2) +
     geom_point(aes(size = final, colour = final), 
                    alpha = 0.8) + 
-    scale_y_continuous(name = 'Tidal height (m)') +
+    scale_y_continuous(name = 'Tide height (m)') +
     scale_x_datetime(name=element_blank(), limits = dt_rng) +
     theme_bw() +
     ggtitle(titles[5]) +
     scale_size(range = c(1, 10)) +
-    theme(legend.position = 'none', axis.text = element_text(size = 14), 
-          text = element_text(size = 16))
+    theme(legend.position = 'none', axis.text = element_text(size = 18), 
+          text = element_text(size = 18))
   print(p5)
 }
 dev.off()
